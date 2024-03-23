@@ -34,7 +34,7 @@ data "aws_subnets" "public" {
 }
 #cluster provision
 resource "aws_eks_cluster" "example" {
-  name     = "EKS_CLOUD"
+  name     = "UBER_CLOUD"
   role_arn = aws_iam_role.example.arn
 
   vpc_config {
@@ -87,7 +87,7 @@ resource "aws_eks_node_group" "example" {
 
   scaling_config {
     desired_size = 1
-    max_size     = 2
+    max_size     = 1
     min_size     = 1
   }
   instance_types = ["t2.medium"]
