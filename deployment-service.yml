@@ -15,7 +15,7 @@ spec:
     spec: 
       containers:
       - name: uber
-        image: gouthamc125/uber:latest
+        image: gouthamc125/Uber:latest
         ports:
         - containerPort: 3000
 
