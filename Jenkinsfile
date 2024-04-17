@@ -6,7 +6,7 @@ pipeline {
             steps {
                 script {
                     withDockerRegistry(credentialsId: 'docker', toolName: 'docker') {
-                        sh "docker build -t gouthamc125/Uber:latest ."
+                        sh "docker build -t gouthamc125/uber:latest ."
                     }
                 }
             }
@@ -16,7 +16,7 @@ pipeline {
             steps {
                 script {
                     withDockerRegistry(credentialsId: 'docker', toolName: 'docker') {
-                        sh "docker push gouthamc125/Uber:latest "
+                        sh "docker push gouthamc125/uber:latest "
                     }
                 }
             }
