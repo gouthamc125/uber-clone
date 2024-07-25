@@ -2,8 +2,10 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: uber-web-app
+  labels:
+    app: uber-web-app
 spec:
-  replicas: 1  # Number of desired replicas
+  replicas: 1
   selector:
     matchLabels:
       app: uber-web-app
@@ -14,7 +16,6 @@ spec:
     spec:
       containers:
       - name: uber-web-app
-        image: gouthamc125/uber-web-app:v1
+        image: gouthamc125/uber-web-app:{{ .Values.image.tag }}
         ports:
-        - containerPort: 3000  # Port your application listens on
-
+        - containerPort: 3000
